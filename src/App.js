@@ -6,7 +6,8 @@ class App extends Component {
   state = {
     listArr: [],
     showDialog: false,
-    inputValue: null
+    inputValue: null,
+    activeIndex: null
   };
 
   showOrCloseDialog = () => {
@@ -15,6 +16,7 @@ class App extends Component {
       return { showDialog: !currentState.showDialog };
     });
   };
+
   createNewItem = () => {
     console.log('Came here');
     this.setState(
@@ -36,8 +38,12 @@ class App extends Component {
     );
   };
 
+  handleListClick = index => {
+    console.log('index: ', index);
+    this.setState({ activeIndex: index });
+  };
+
   handleInputChange = e => {
-    // console.log(e.target.value);
     this.setState({ inputValue: e.target.value });
   };
 
@@ -57,7 +63,11 @@ class App extends Component {
         </div>
         <div className='list-and-history'>
           <div className='list'>
-            <List listArr={this.state.listArr} />
+            <List
+              listArr={this.state.listArr}
+              listClicked={index => this.handleListClick(index)}
+              activeIndex={this.state.activeIndex}
+            />
           </div>
           <div className='history'>
             <div className='head'>

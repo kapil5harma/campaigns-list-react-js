@@ -2,12 +2,17 @@ import React from 'react';
 
 const List = props => {
   // console.log('props: ', props);
-  const { listArr } = props;
+  const { listArr, listClicked, activeIndex } = props;
 
   const list = listArr.map((listItem, index) => {
     // console.log('listItem: ', toString(listItem.createdAt));
     return (
-      <div key={`${listItem.campaignName}-${index}`} className='head'>
+      <div
+        key={`${listItem.campaignName}-${index}`}
+        className='head'
+        onClick={() => listClicked(index)}
+        style={activeIndex === index ? { background: '#f9fbff', boxShadow: '0px 0px 15px 1px rgba(0,0,0,0.05)' } : {}}
+      >
         <div className='left'>
           <div className='list-number'>{index + 1}</div>
           <div className='name-and-time'>
