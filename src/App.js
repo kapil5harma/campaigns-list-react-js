@@ -27,8 +27,10 @@ class App extends Component {
             campaignName: this.state.inputValue,
             createdAt: new Date().toString().substr(16, 8)
           };
-          let listArr = [...this.state.listArr, newItem];
-          this.setState({ listArr });
+          let listArr = [];
+          if (this.state.listArr) listArr = [...this.state.listArr, newItem];
+          else listArr = [newItem];
+          this.setState({ listArr, inputValue: null });
         } else {
           console.log('Enter a value and try again..');
         }
@@ -42,6 +44,21 @@ class App extends Component {
 
   handleInputChange = e => {
     this.setState({ inputValue: e.target.value });
+  };
+
+  handleButtonClicks = type => {
+    switch (type) {
+      case '1':
+        break;
+      case '2':
+        break;
+      case '3':
+        break;
+      case '4':
+        break;
+      default:
+        break;
+    }
   };
 
   render() {
