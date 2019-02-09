@@ -1,11 +1,9 @@
 import React from 'react';
 
 const List = props => {
-  // console.log('props: ', props);
   const { listArr, listClicked, activeIndex } = props;
 
   const list = listArr.map((listItem, index) => {
-    // console.log('listItem: ', toString(listItem.createdAt));
     return (
       <div
         key={`${listItem.campaignName}-${index}`}

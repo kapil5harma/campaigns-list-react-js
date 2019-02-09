@@ -41,7 +41,6 @@ i {
 }
 .list .head {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   align-items: space-between;
   border: 1px solid rgba(30, 30, 30, 0.05);
@@ -49,7 +48,6 @@ i {
 }
 .left {
   display: flex;
-  /* justify-content: flex-start; */
   align-items: center;
 }
 .name-and-time {
@@ -67,7 +65,6 @@ i {
 }
 .right {
   display: flex;
-  /* justify-content: flex-start; */
   align-items: center;
 }
 .list-number {
@@ -101,7 +98,6 @@ i {
   justify-content: flex-start;
   font-size: 1.6rem;
   color: #3d3d3d;
-  padding: 2rem 1.6rem;
 }
 .backdrop {
   position: absolute;

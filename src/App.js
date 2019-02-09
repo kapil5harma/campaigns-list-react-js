@@ -4,42 +4,39 @@ import List from './components/List';
 
 class App extends Component {
   state = {
-    listArr: [],
+    listArr: null,
     showDialog: false,
     inputValue: null,
     activeIndex: null
   };
 
   showOrCloseDialog = () => {
-    console.log('this.state: ', this.state);
     this.setState(currentState => {
       return { showDialog: !currentState.showDialog };
     });
   };
 
   createNewItem = () => {
-    console.log('Came here');
     this.setState(
       currentState => {
         return { showDialog: !currentState.showDialog };
       },
       () => {
-        console.log('In callback');
-        console.log('this.state: ', this.state);
-
-        let newItem = {
-          campaignName: this.state.inputValue,
-          createdAt: new Date().toString().substr(16, 8)
-        };
-        let listArr = [...this.state.listArr, newItem];
-        console.log('listArr: ', listArr);
-        this.setState({ listArr });
+        if (this.state.inputValue) {
+          let newItem = {
+            campaignName: this.state.inputValue,
+            createdAt: new Date().toString().substr(16, 8)
+          };
+          let listArr = [...this.state.listArr, newItem];
+          this.setState({ listArr });
+        } else {
+          console.log('Enter a value and try again..');
+        }
       }
     );
   };
 
   handleListClick = index => {
-    console.log('index: ', index);
     this.setState({ activeIndex: index });
   };
 
@@ -61,21 +58,23 @@ class App extends Component {
             + Create New
           </button>
         </div>
-        <div className='list-and-history'>
-          <div className='list'>
-            <List
-              listArr={this.state.listArr}
-              listClicked={index => this.handleListClick(index)}
-              activeIndex={this.state.activeIndex}
-            />
-          </div>
-          <div className='history'>
-            <div className='head'>
-              <i className='fas fa-history' />
-              <span className='on-icons-right'>History</span>
+        {this.state.listArr && (
+          <div className='list-and-history'>
+            <div className='list'>
+              <List
+                listArr={this.state.listArr}
+                listClicked={index => this.handleListClick(index)}
+                activeIndex={this.state.activeIndex}
+              />
+            </div>
+            <div className='history'>
+              <div className='head'>
+                <i className='fas fa-history' />
+                <span className='on-icons-right'>History</span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         {this.state.showDialog && (
           <div className='backdrop' onClick={() => this.showOrCloseDialog()}>
             <div className='dialog' onClick={e => e.stopPropagation()}>
