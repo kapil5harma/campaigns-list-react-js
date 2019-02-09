@@ -70,13 +70,13 @@ i {
 .list-number {
   border-radius: 50%;
   font-size: 0.875rem;
-  background-color: #2191ec;
+  background-color: #efefef;
   width: 2.4rem;
   height: 2.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #2191ec;
   font-weight: bold;
 }
 .icon-and-text {
