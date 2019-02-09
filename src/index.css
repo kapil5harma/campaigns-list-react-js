@@ -2,8 +2,9 @@ html {
   font-size: 10px; /* base font-size */
 }
 body {
-  margin: 0;
-  padding: 2rem;
+  padding: 0;
+  margin: 2rem;
+  box-shadow: 0 8px 20px 1px rgba(0, 0, 0, 0.2);
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
