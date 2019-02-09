@@ -26,28 +26,28 @@ const List = props => {
           <div className='icon-and-text' onClick={() => handleButtonClicks(1)}>
             <i
               className='fas fa-play'
-              style={activeIndex === index ? { color: '#e4c426', marginBottom: '0.5rem' } : {}}
+              style={activeIndex === index ? { color: '#e4c426', marginBottom: '0.5rem' } : { marginBottom: '0.5rem' }}
             />
             <span>Play</span>
           </div>
           <div className='icon-and-text' onClick={() => handleButtonClicks(2)}>
             <i
               className='fas fa-comment-alt'
-              style={activeIndex === index ? { color: '#488ee4', marginBottom: '0.5rem' } : {}}
+              style={activeIndex === index ? { color: '#488ee4', marginBottom: '0.5rem' } : { marginBottom: '0.5rem' }}
             />
             <span>Comment</span>
           </div>
           <div className='icon-and-text' onClick={() => handleButtonClicks(3)}>
             <i
               className='fas fa-history'
-              style={activeIndex === index ? { color: '#488ee4', marginBottom: '0.5rem' } : {}}
+              style={activeIndex === index ? { color: '#488ee4', marginBottom: '0.5rem' } : { marginBottom: '0.5rem' }}
             />
             <span>Rename</span>
           </div>
           <div className='icon-and-text' onClick={() => handleButtonClicks(4)}>
             <i
               className='fas fa-trash'
-              style={activeIndex === index ? { color: '#c70217', marginBottom: '0.5rem' } : {}}
+              style={activeIndex === index ? { color: '#c70217', marginBottom: '0.5rem' } : { marginBottom: '0.5rem' }}
             />
             <span>Delete</span>
           </div>
