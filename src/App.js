@@ -47,14 +47,19 @@ class App extends Component {
   };
 
   handleButtonClicks = type => {
+    console.log('type: ', type);
     switch (type) {
-      case '1':
+      case 1:
+        console.log('// TODO: Play/Pause implementation comes here \n\n');
         break;
-      case '2':
+      case 2:
+        console.log('// TODO: Comment implementation comes here \n\n');
         break;
-      case '3':
+      case 3:
+        console.log('// TODO: Rename implementation comes here \n\n');
         break;
-      case '4':
+      case 4:
+        console.log('// TODO: Delete implementation comes here \n\n');
         break;
       default:
         break;
@@ -82,6 +87,7 @@ class App extends Component {
                 listArr={this.state.listArr}
                 listClicked={index => this.handleListClick(index)}
                 activeIndex={this.state.activeIndex}
+                handleButtonClicks={type => this.handleButtonClicks(type)}
               />
             </div>
             <div className='history'>

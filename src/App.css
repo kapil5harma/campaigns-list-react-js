@@ -89,6 +89,7 @@ i {
 }
 .icon-and-text span {
   font-size: 0.75rem;
+  cursor: pointer;
 }
 .history {
   width: 35%;
