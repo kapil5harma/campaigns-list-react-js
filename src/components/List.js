@@ -4,9 +4,10 @@ const List = props => {
   const { listArr, listClicked, activeIndex, handleButtonClicks } = props;
 
   const list = listArr.map((listItem, index) => {
+    // console.log('listItem: ', listItem);
     return (
       <div
-        key={`${listItem.campaignName}-${index}`}
+        key={`${listItem.id}`}
         className='head'
         onClick={() => listClicked(index)}
         style={activeIndex === index ? { background: '#f9fbff', boxShadow: '0px 0px 15px 1px rgba(0,0,0,0.05)' } : {}}

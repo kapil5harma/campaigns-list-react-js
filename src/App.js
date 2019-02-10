@@ -24,6 +24,7 @@ class App extends Component {
       () => {
         if (this.state.inputValue) {
           let newItem = {
+            id: this.state.listArr && this.state.listArr.length ? this.state.listArr.length : 0,
             campaignName: this.state.inputValue,
             createdAt: new Date().toString().substr(16, 8)
           };
